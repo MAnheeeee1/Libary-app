@@ -1,0 +1,15 @@
+h1{
+    background-color: red;
+}
+
+
+.bookLibary{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+.card{
+    background-color: rebeccapurple;
+    padding: 20px;
+    border-radius: 10px;
+}
