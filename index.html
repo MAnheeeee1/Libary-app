@@ -7,6 +7,23 @@
 </head>
 <body>
     <button>New Book</button>
+    <dialog>
+        <button id="close-dialog">X</button>
+        <form method="dialog" >
+            <label for="book_title">Title:</label>
+            <input type="text" id="book_title" name="title" required>
+            <label for="book-writer">Author:</label>
+            <input type="text" id="book-writer" name="author" required>
+            <label for="book_pages">Pages:</label>
+            <input type="number" id="book_pages" name="pages" required>
+            <label for="read-status">Status:</label>
+            <select name="status" id="read-status" required>
+                <option value="not-read">Not read</option>
+                <option value="read">Read</option>
+            </select>
+            <button id="submit-form" type="button">Create Book!</button>
+        </form>
+    </dialog>
     <div class="bookLibary">
         <div class="card">
             <h2 class="title">Think and Grow rich</h2>
