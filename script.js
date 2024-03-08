@@ -6,17 +6,23 @@ const close_button = document.querySelector("#close-dialog");
 const submitButton = document.querySelector("#submit-form");
 const form = document.querySelector("form");
 
-submitButton.addEventListener("click", ()=>{
-    book_writer = document.querySelector("#book-writer");
-    book_title = document.querySelector("#book_title");
-    book_pages = document.querySelector("#book_pages");
-    book_status = document.querySelector("#read-status");
-    let book = new Book(book_title.value, book_writer.value, book_pages.value, book_status.value, myLibrary.length);
-    addBookToLibrary(book);
-    updateLibary();
-    const emptyLibaryText = document.querySelector("#emptylibary-text");
-    emptyLibaryText.remove();
-    form.submit();
+submitButton.addEventListener("click", (event)=>{
+    event.preventDefault();
+    if (form.checkValidity()) {
+        book_writer = document.querySelector("#book-writer");
+        book_title = document.querySelector("#book_title");
+        book_pages = document.querySelector("#book_pages");
+        book_status = document.getElementById("book_status");
+        let book = new Book(book_title.value, book_writer.value, book_pages.value, book_status.value, myLibrary.length);
+        addBookToLibrary(book);
+        updateLibary();
+        const emptyLibaryText = document.querySelector("#emptylibary-text");
+        emptyLibaryText.remove();
+        form.reset();
+        dialog.close();
+    } else {
+        alert("Form is not valid");
+    }
 })
 button_form.addEventListener("click", () =>{
     dialog.showModal();
@@ -52,23 +58,36 @@ function updateLibary(){
     book_writer.innerHTML = addedBook.writer;
 
     let book_pages = document.createElement("p");
-    book_pages.innerHTML = addedBook.pages;
+    book_pages.innerHTML = "Total pages: " + addedBook.pages;
 
-    let book_readStatus = document.createElement("p");
-    book_readStatus.innerHTML = addedBook.status;
+    let book_readStatus = document.createElement("button");
+    book_readStatus.innerHTML = addedBook.readStatus;
+    book_readStatus.classList.add(addedBook.readStatus);
+    book_readStatus.addEventListener("click", ()=>{
+        if (book_readStatus.innerHTML === "read"){
+            book_readStatus.classList.remove("read")
+            book_readStatus.classList.add("not-read");
+            book_readStatus.innerHTML = "not-read";
+        }
+        else if (book_readStatus.innerHTML === "not-read"){
+            book_readStatus.classList.remove("not-read")
+            book_readStatus.classList.add("read")
+            book_readStatus.innerHTML = "read";
+        }
+    })
 
     let deleteButton = document.createElement("button");
     deleteButton.classList.add("deleteBook");
-    deleteButton.innerHTML = "Delete Book";
+    deleteButton.innerHTML = "X";
     deleteButton.addEventListener("click", ()=>{
         book_card.remove();
     })
     book_libary.appendChild(book_card);
+    book_card.appendChild(deleteButton);
     book_card.appendChild(book_title);
     book_card.appendChild(book_writer);
     book_card.appendChild(book_pages);
     book_card.appendChild(book_readStatus);
-    book_card.appendChild(deleteButton);
 }
 
 

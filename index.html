@@ -9,7 +9,7 @@
     <header>
         <h1>Libary App</h1>
     </header>
-    <button>New Book</button>
+    <button class="addBook">Add Book</button>
     <dialog>
         <button id="close-dialog">X</button>
         <p>Fill in the form to add your book</p>
@@ -27,8 +27,8 @@
                 <input type="number" id="book_pages" name="pages" required>
             </div>
             <div class="form-questionSet">
-                <label for="read-status">Status:</label>
-                <select name="status" id="read-status" required>
+                <label for="book_status">Have you read the book?</label>
+                <select name="reading-status" id="book_status">
                     <option value="not-read">Not read</option>
                     <option value="read">Read</option>
                 </select>

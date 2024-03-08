@@ -8,6 +8,49 @@ h1{
     margin-top: 0;
 }
 
+p{
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.addBook{
+    display: block;
+    margin: auto;
+    margin-top: 20px;
+    padding: 10px 30px 10px 30px;
+    border-radius: 20px;
+    transition: 0.5s;
+    border: 2px solid black;
+}
+.addBook:hover{
+    background-color: #fca311;
+    color: #14213d;
+
+}
+
+.not-read, .read{
+    display: block;
+    margin: auto;
+    border: none;
+    color: white;
+    width: 40%;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    transition: 0.5s;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.deleteBook{
+    display: block;
+    margin-left: auto;
+    background-color: transparent;
+    font-weight: bold;
+}
+.not-read{
+    background-color: darkred;
+}
+.read{
+    background-color: green;
+}
 dialog{
     border-radius: 20px;
     padding: 30px;
@@ -31,9 +74,11 @@ dialog{
 
 header{
     height: 5vh;
-    background-color: rebeccapurple;
+    background-color: #14213d;
     display: flex;
     padding: 20px;
+    color: white;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
 }
 
@@ -45,9 +90,10 @@ header{
     padding: 20px;
 }
 .card{
-    background-color: rebeccapurple;
+    background-color: #e5e5e5;
     padding: 20px;
     border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
 
 #emptylibary-text{
