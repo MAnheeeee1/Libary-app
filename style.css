@@ -13,3 +13,9 @@ h1{
     padding: 20px;
     border-radius: 10px;
 }
+
+#emptylibary-text{
+    color: #88919b;
+    align-self: center;
+    justify-self: center;
+}

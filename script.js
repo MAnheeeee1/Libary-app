@@ -16,9 +16,11 @@ submitButton.addEventListener("click", ()=>{
     book_title = document.querySelector("#book_title");
     book_pages = document.querySelector("#book_pages");
     book_status = document.querySelector("#read-status");
-    const book1 = new Book(book_title.value, book_writer.value, book_pages.value, book_status.value);
-    addBookToLibrary(book1);
+    let book = new Book(book_title.value, book_writer.value, book_pages.value, book_status.value);
+    addBookToLibrary(book);
     updateLibary();
+    const emptyLibaryText = document.querySelector("#emptylibary-text");
+    emptyLibaryText.remove();
     form.submit();
 })
 button_form.addEventListener("click", () =>{
@@ -37,31 +39,29 @@ function Book(title, writer, pages, readStatus) {
 }
 
 function addBookToLibrary(book) {
-    myLibrary.push(book)
+    myLibrary.push(book);
 }
 
 function updateLibary(){
-    for (const books of myLibrary){
-        const book_card = document.createElement("div")
-        book_card.classList.add("card")
+    let addedBook = myLibrary[myLibrary.length -1];
+    let book_card = document.createElement("div")
+    book_card.classList.add("card")
 
-        const book_title = document.createElement("h2");
-        book_title.innerHTML = books.title;
+    let book_title = document.createElement("h2");
+    book_title.innerHTML = addedBook.title;
 
-        const book_writer = document.createElement("p");
-        book_writer.innerHTML = books.writer;
+    let book_writer = document.createElement("p");
+    book_writer.innerHTML = addedBook.writer;
 
-        const book_pages = document.createElement("p");
-        book_pages.innerHTML = books.pages;
+    let book_pages = document.createElement("p");
+    book_pages.innerHTML = addedBook.pages;
 
-        const book_readStatus = document.createElement("p");
-        book_readStatus.innerHTML = books.status;
+    let book_readStatus = document.createElement("p");
+    book_readStatus.innerHTML = addedBook.status;
 
-        book_libary.appendChild(book_card)
-        book_card.appendChild(book_title)
-        book_card.appendChild(book_writer)
-        book_card.appendChild(book_pages)
-        book_card.appendChild(book_readStatus)
-    }
+    book_libary.appendChild(book_card);
+    book_card.appendChild(book_title);
+    book_card.appendChild(book_writer);
+    book_card.appendChild(book_pages);
+    book_card.appendChild(book_readStatus);
 }
-
