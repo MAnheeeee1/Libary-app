@@ -1,5 +1,40 @@
+body{
+    padding: 0;
+    margin:0 ;
+}
+
 h1{
-    background-color: red;
+    text-align: left;
+    margin-top: 0;
+}
+
+dialog{
+    border-radius: 20px;
+    padding: 30px;
+}
+.form-questionSet{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#submit-form{
+    margin-top: 20px;
+    width: 100%;
+    border-radius: 20px;
+    border: none;
+    background-color: aqua;
+    align-self: center;
+    justify-self: center;
+}
+
+
+header{
+    height: 5vh;
+    background-color: rebeccapurple;
+    display: flex;
+    padding: 20px;
+
 }
 
 
@@ -7,6 +42,7 @@ h1{
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     gap: 20px;
+    padding: 20px;
 }
 .card{
     background-color: rebeccapurple;
@@ -16,6 +52,4 @@ h1{
 
 #emptylibary-text{
     color: #88919b;
-    align-self: center;
-    justify-self: center;
 }

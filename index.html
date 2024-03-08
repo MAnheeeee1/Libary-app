@@ -6,21 +6,33 @@
     <title>Title</title>
 </head>
 <body>
+    <header>
+        <h1>Libary App</h1>
+    </header>
     <button>New Book</button>
     <dialog>
         <button id="close-dialog">X</button>
+        <p>Fill in the form to add your book</p>
         <form method="dialog" >
-            <label for="book_title">Title:</label>
-            <input type="text" id="book_title" name="title" required>
-            <label for="book-writer">Author:</label>
-            <input type="text" id="book-writer" name="author" required>
-            <label for="book_pages">Pages:</label>
-            <input type="number" id="book_pages" name="pages" required>
-            <label for="read-status">Status:</label>
-            <select name="status" id="read-status" required>
-                <option value="not-read">Not read</option>
-                <option value="read">Read</option>
-            </select>
+            <div class="form-questionSet">
+                <label for="book_title">Title:</label>
+                <input type="text" id="book_title" name="title" required>
+            </div>
+            <div class="form-questionSet">
+                <label for="book-writer">Author:</label>
+                <input type="text" id="book-writer" name="author" required>
+            </div>
+            <div class="form-questionSet">
+                <label for="book_pages">Pages:</label>
+                <input type="number" id="book_pages" name="pages" required>
+            </div>
+            <div class="form-questionSet">
+                <label for="read-status">Status:</label>
+                <select name="status" id="read-status" required>
+                    <option value="not-read">Not read</option>
+                    <option value="read">Read</option>
+                </select>
+            </div>
             <button id="submit-form" type="submit">Create Book!</button>
         </form>
     </dialog>
